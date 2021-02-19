@@ -29,7 +29,7 @@ if get_option('gtk3')
     includes: libvte_gtk3_gir_includes,
     dependencies: libvte_gtk3_dep,
     extra_args: '-DVTE_COMPILATION',
-    nsversion: vte_gtk3_api_version,
+    nsversion: vte_api_version,
     namespace: 'Vte',
     export_packages: vte_gtk3_api_name,
     header: 'vte' / 'vte.h',
