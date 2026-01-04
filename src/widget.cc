@@ -1614,10 +1614,8 @@ Widget::notify_scroll_bounds_changed(bool value_changed)
         auto const freezer = vte::glib::FreezeObjectNotify{m_vadjustment.get()};
         auto changed = false;
 
-        auto const lower = terminal()->scroll_limit_lower();
-        auto const upper = terminal()->scroll_limit_upper();
-        auto dlower = 0.;
-        auto dupper = double(upper - lower);
+        auto dlower = double(terminal()->scroll_limit_lower());
+        auto dupper = double(terminal()->scroll_limit_upper());
         auto dline = 1.;
         auto row_count = terminal()->row_count();
         if (scroll_unit_is_pixels()) [[unlikely]] {
