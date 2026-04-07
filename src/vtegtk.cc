@@ -4380,7 +4380,7 @@ vte_terminal_get_selection(VteTerminal *terminal) noexcept
 try
 {
 	g_return_val_if_fail(VTE_IS_TERMINAL(terminal), NULL);
-	const auto* data = IMPL(terminal)->m_selection[vte::to_integral(vte::platform::ClipboardType::PRIMARY)];
+	const auto* data = IMPL(terminal)->m_selection[std::to_underlying(vte::platform::ClipboardType::PRIMARY)];
 	return g_strndup (data->str, data->len);
 }
 catch (...)
